@@ -1,0 +1,73 @@
+# Entorno virtual
+venv/
+.env
+
+# Archivos de Python
+*.py[cod]
+*$py.class
+__pycache__/
+
+# Archivos de Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+
+# Archivos de configuración de IDE
+.idea/
+*.iml
+.vscode/
+
+# Archivos de compilación
+build/
+dist/
+*.egg-info/
+*.eggs/
+*.manifest
+*.spec
+
+# Archivos de cobertura de pruebas
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Archivos de Jupyter Notebook
+.ipynb_checkpoints/
+
+# Archivos de Celery
+celerybeat-schedule.*
+
+# Archivos de SageMath
+*.sage.py
+
+# Archivos de mypy
+.mypy_cache/
+
+# Archivos de documentación de mkdocs
+/site
+
+# Archivos de Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+# Archivos de configuración de SFTP
+sftp-config.json
+
+# Archivos de control de paquetes
+Package Control.last-run
+Control.ca-list
+Control.ca-bundle
+Control.system-ca-bundle
+GitHub.sublime-settings
