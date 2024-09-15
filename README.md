@@ -76,18 +76,14 @@ Las tareas son del usuario que se ha logueado. Si no está logueado, no podrá r
 
     ```bash
     https://github.com/jrxjb/API.git
-    cd tu-repositorio
     ```
-
 
 2. Entrar a la carpeta del proyecto:
+3. 
     ```bash
-    {
 cd \myapi
-    }
     ```
-
-
+    
 3. Crea y activa un entorno virtual:
     ```bash
     python -m venv env
