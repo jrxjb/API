@@ -81,7 +81,7 @@ Las tareas son del usuario que se ha logueado. Si no está logueado, no podrá r
 
 
 2. Entrar a la carpeta del proyecto:
-    ```bah
+    ```bash
     {
 cd \myapi
     }
