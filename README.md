@@ -79,10 +79,11 @@ Las tareas son del usuario que se ha logueado. Si no está logueado, no podrá r
     ```
 
 2. Entrar a la carpeta del proyecto:
+
     ```bash
-cd \myapi
+    cd myapi
     ```
-    
+
 3. Crea y activa un entorno virtual:
     ```bash
     python -m venv env
