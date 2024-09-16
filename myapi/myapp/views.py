@@ -1,6 +1,6 @@
 from rest_framework import generics, permissions
 from rest_framework.response import Response
-from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.tokens import RefreshToken 
 from django.contrib.auth.models import User
 from .models import Task
 from .serializers import TaskSerializer,LoginSerializer, RegisterSerializer
@@ -24,7 +24,6 @@ class LoginView(generics.GenericAPIView):
             'access': str(refresh.access_token),
         })
 
-
 class LogoutView(generics.GenericAPIView):
     permission_classes = (permissions.IsAuthenticated,)
 
@@ -33,9 +32,10 @@ class LogoutView(generics.GenericAPIView):
             refresh_token = request.data["refresh"]
             token = RefreshToken(refresh_token)
             token.blacklist()
-            return Response(status=205)
+            return Response(status=204)
         except Exception as e:
-            return Response(status=400)
+            return Response({"detail": str(e)}, status=400)
+
 
 class TaskListCreateView(generics.ListCreateAPIView):
     serializer_class = TaskSerializer
