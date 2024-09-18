@@ -28,14 +28,14 @@ schema_view = get_schema_view(
    ),
    public=True,
    permission_classes=(permissions.AllowAny,),
+   
 )
-
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('myapp.urls')),
-  #  path('api-auth/', include('rest_framework.urls')),
+    path('api-auth/', include('rest_framework.urls')),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     
 ]

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'myapp',
     'drf_yasg',
     'rest_framework_simplejwt.token_blacklist',
+    'rest_framework.authtoken',
     
 
 ]
@@ -114,6 +115,8 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_AUTH_REGISTER_SERIALIZERS = {
     'REGISTER_SERIALIZER': 'tu_app.serializers.CustomRegisterSerializer',
 }
+
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
