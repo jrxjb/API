@@ -67,7 +67,7 @@ Para realizar el logout, debes enviar una solicitud `POST` a la ruta `/api/logou
 {
   "refresh_token": "<refresh_token>"
 }
-
+```
 Respuesta esperada
 Código de estado: 204 No Content
  - **Descripción**: La solicitud de logout se procesó correctamente y no hay contenido adicional que devolver.
