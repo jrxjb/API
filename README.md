@@ -31,7 +31,8 @@ Las tareas son del usuario que se ha logueado. Si no está logueado, no podrá r
         "email": "usuario@example.com", 
     }
     ```
-  - **Descripción**: Devuelve el `username`y `email` 
+
+**Descripción**: Devuelve el `username`y `email` 
 
 ### Autenticación
 - `POST /api/login/` - Iniciar sesión
@@ -59,7 +60,7 @@ Para realizar el logout, debes enviar una solicitud `POST` a la ruta `/api/logou
 
 **Headers**
 
-- `Authorization`: `Bearer <access_token>`
+- `Authorization`: `Bearer <access_token>` 
 
  **Body**
 
@@ -72,26 +73,173 @@ Respuesta esperada
 Código de estado: 204 No Content
  - **Descripción**: La solicitud de logout se procesó correctamente y no hay contenido adicional que devolver.
 
-    
+
+
+## CRUD de Tareas
+
+### Crear una Tarea
+
+**Ruta:** `POST /api/tasks/`
+
+**Descripción:** Crear una nueva tarea.
+
+**Headers:**
+- `Content-Type: application/json`
+- `Authorization: Bearer <access_token>`
+
+**Body:**
+```json
+{
+    "title": "Nueva Tarea",
+    "description": "Descripción de la nueva tarea",
+    "completed": true,
+    "user": <user_id>
+}
+```
+
+**Respuesta:**
+
+Código de estado: 201 Created
+
+**Body:**
+{
+  "id": <task_id>,
+  "title": "Nueva Tarea",
+  "description": "Descripción de la nueva tarea",
+  "completed": true,
+  "user": <user_id>
+}
+
+
+### Obtener una Tarea
+
+**Ruta:** `GET /api/tasks/<int:pk>/`
+
+**Descripción:** Obtener los detalles de una tarea específica.
+
+**Headers:**
+
+Authorization: Bearer <access_token>
+
+**Respuesta:**
+
+ Código de estado: 200 OK
+ 
+ **Body:**
+  
+```json
+{
+  "id": <task_id>,
+  "titulo": "Nueva Tarea",
+  "descripcion": "Descripción de la nueva tarea",
+}
+```
+### Obtener todas las Tareas de un Usuario
+
+**Ruta:** `GET /api/tasks/`
+
+**Descripción:** Obtener todas las tareas asociadas a un usuario específico.
+
+**Headers:**
+- `Authorization: Bearer <access_token>`
+
+Respuesta:
+
+Código de estado: 200 OK
+
+**Body:**
+
+```json
+[
+{
+    "id": 1,
+    "titulo": "Nueva Tarea 1",
+    "descripcion": "Descripción de la nueva tarea 1",
+    "completed": true,
+    "user": <user_id>
+}
+
+{
+    "id": 2,
+    "titulo": "Nueva Tarea 2 ",
+    "descripcion": "Descripción de la nueva tarea 2 ",
+    "completed": true,
+    "user": <user_id>
+}
+]
+```
+
+
+### Actualizar una Tarea
+
+**Ruta:** `PUT /api/tasks/<int:pk>/`
+
+**Descripción:** Actualizar los detalles de una tarea existente.
+
+**Headers:**
+
+* Content-Type: application/json
+* Authorization: Bearer <access_token>
+
+**Body:**
+```json
+{
+
+    "title": "Titulo actualizado",
+    "description": "Descripción actualizada",
+    "user": <user_id>
+
+}
+```
+
+**Respuesta:**
+ Código de estado: 200 OK
+ 
+ **Body:**
+
+```json
+{
+  "id": 1,
+    "title": "Titulo actualizado",
+    "description": "Descripción actualizada",
+  "completed": true,
+  "user": <user_id>
+}
+```
+
+### Eliminar una Tarea
+**Ruta:** `DELETE /api/tasks/<int:pk>/`
+
+**Descripción:** Eliminar una tarea existente.
+
+- **Headers:**
+
+* Authorization: Bearer <access_token>
+
+- **Respuesta:**
+
+* Código de estado: 204 No Content
+
+
 ##Instalación de la API REST
 
 ### Requisitos
--asgiref==3.8.1
--dj-rest-auth==6.0.0
--Django==5.1.1
--django-bootstrap3==24.2
--djangorestframework==3.15.2
--djangorestframework-simplejwt==5.3.1
--drf-yasg==1.21.7
--inflection==0.5.1
--packaging==24.1
--PyJWT==2.9.0
--pytz==2024.2
--PyYAML==6.0.2
--setuptools==74.1.2
--sqlparse==0.5.1
--tzdata==2024.1
--uritemplate==4.1.1
+- asgiref==3.8.1
+- dj-rest-auth==6.0.0
+- Django==5.1.1
+- django-bootstrap3==24.2
+- djangorestframework==3.15.2
+- djangorestframework-simplejwt==5.3.1
+- drf-yasg==1.21.7
+- inflection==0.5.1
+- packaging==24.1
+- PyJWT==2.9.0
+- pytz==2024.2
+- PyYAML==6.0.2
+- setuptools==74.1.2
+- sqlparse==0.5.1
+- tzdata==2024.1
+- uritemplate==4.1.1
 
 ### Instalación:
 1. Clonar el repositorio de GitHub con el comando:
