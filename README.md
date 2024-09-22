@@ -93,23 +93,24 @@ Código de estado: 204 No Content
     "title": "Nueva Tarea",
     "description": "Descripción de la nueva tarea",
     "completed": true,
-    "user": <user_id>
+    "user": `user_id`
 }
 ```
 
 **Respuesta:**
 
-Código de estado: 201 Created
+- Código de estado: 201 Created
 
 **Body:**
+```json
 {
-  "id": <task_id>,
+  "id": `task_id`,
   "title": "Nueva Tarea",
   "description": "Descripción de la nueva tarea",
   "completed": true,
-  "user": <user_id>
+  "user": `user_id`
 }
-
+```
 
 ### Obtener una Tarea
 
@@ -119,17 +120,17 @@ Código de estado: 201 Created
 
 **Headers:**
 
-Authorization: Bearer <access_token>
+- ` Authorization: Bearer <access_token>`
 
 **Respuesta:**
 
- Código de estado: 200 OK
+ - Código de estado: 200 OK
  
  **Body:**
   
 ```json
 {
-  "id": <task_id>,
+  "id": `task_id`,
   "titulo": "Nueva Tarea",
   "descripcion": "Descripción de la nueva tarea",
 }
@@ -143,9 +144,9 @@ Authorization: Bearer <access_token>
 **Headers:**
 - `Authorization: Bearer <access_token>`
 
-Respuesta:
+**Respuesta:**
 
-Código de estado: 200 OK
+- Código de estado: 200 OK
 
 **Body:**
 
@@ -156,15 +157,14 @@ Código de estado: 200 OK
     "titulo": "Nueva Tarea 1",
     "descripcion": "Descripción de la nueva tarea 1",
     "completed": true,
-    "user": <user_id>
+    "user": `user_id`
 }
-
 {
     "id": 2,
     "titulo": "Nueva Tarea 2 ",
     "descripcion": "Descripción de la nueva tarea 2 ",
     "completed": true,
-    "user": <user_id>
+    "user": `user_id`
 }
 ]
 ```
@@ -178,8 +178,8 @@ Código de estado: 200 OK
 
 **Headers:**
 
-* Content-Type: application/json
-* Authorization: Bearer <access_token>
+- `Content-Type: application/json-`
+- ` Authorization: Bearer <access_token>` `
 
 **Body:**
 ```json
@@ -187,13 +187,13 @@ Código de estado: 200 OK
 
     "title": "Titulo actualizado",
     "description": "Descripción actualizada",
-    "user": <user_id>
+    "user": `user_id` 
 
 }
 ```
 
 **Respuesta:**
- Código de estado: 200 OK
+- Código de estado: 200 OK
  
  **Body:**
 
@@ -203,7 +203,7 @@ Código de estado: 200 OK
     "title": "Titulo actualizado",
     "description": "Descripción actualizada",
   "completed": true,
-  "user": <user_id>
+  "user": `user_id`
 }
 ```
 
@@ -212,13 +212,13 @@ Código de estado: 200 OK
 
 **Descripción:** Eliminar una tarea existente.
 
-- **Headers:**
+**Headers:**
 
-* Authorization: Bearer <access_token>
+- `Authorization: Bearer <access_token>` 
 
-- **Respuesta:**
+**Respuesta:**
 
-* Código de estado: 204 No Content
+- Código de estado: 204 No Content
 
 
 ##Instalación de la API REST
