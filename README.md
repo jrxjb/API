@@ -93,7 +93,7 @@ Código de estado: 204 No Content
     "title": "Nueva Tarea",
     "description": "Descripción de la nueva tarea",
     "completed": true,
-    "user": `user_id`
+    "user": 1
 }
 ```
 
@@ -104,11 +104,11 @@ Código de estado: 204 No Content
 **Body:**
 ```json
 {
-  "id": `task_id`,
+  "id": 1,
   "title": "Nueva Tarea",
   "description": "Descripción de la nueva tarea",
   "completed": true,
-  "user": `user_id`
+  "user": 1
 }
 ```
 
@@ -130,7 +130,7 @@ Código de estado: 204 No Content
   
 ```json
 {
-  "id": `task_id`,
+  "id": 1,
   "titulo": "Nueva Tarea",
   "descripcion": "Descripción de la nueva tarea",
 }
@@ -153,18 +153,18 @@ Código de estado: 204 No Content
 ```json
 [
 {
-    "id": 1,
+    "id": 1, 
     "titulo": "Nueva Tarea 1",
     "descripcion": "Descripción de la nueva tarea 1",
     "completed": true,
-    "user": `user_id`
+    "user": 1
 }
 {
     "id": 2,
     "titulo": "Nueva Tarea 2 ",
     "descripcion": "Descripción de la nueva tarea 2 ",
     "completed": true,
-    "user": `user_id`
+    "user": 1
 }
 ]
 ```
@@ -187,7 +187,7 @@ Código de estado: 204 No Content
 
     "title": "Titulo actualizado",
     "description": "Descripción actualizada",
-    "user": `user_id` 
+    "user": 1
 
 }
 ```
@@ -203,7 +203,7 @@ Código de estado: 204 No Content
     "title": "Titulo actualizado",
     "description": "Descripción actualizada",
   "completed": true,
-  "user": `user_id`
+  "user": 1
 }
 ```
 
