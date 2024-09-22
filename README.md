@@ -2,8 +2,8 @@
 
 ## Objetivo
 Crear una API REST con Django Rest Framework que haga autenticación de usuario con JWT y que implemente documentación interactiva con Swagger. La API debe permitir:
-- Login
 - Register
+- Login
 - Logout
 - CRUD de tareas
 
@@ -33,7 +33,7 @@ Las tareas son del usuario que se ha logueado. Si no está logueado, no podrá r
     ```
   - **Descripción**: Devuelve el `username`y `email` 
 
-  ### Autenticación
+### Autenticación
 - `POST /api/login/` - Iniciar sesión
   - **Request**: 
     ```json
@@ -50,26 +50,48 @@ Las tareas son del usuario que se ha logueado. Si no está logueado, no podrá r
     }
     ```
   - **Descripción**: Devuelve un `refresh token` y un `access token`.
+
+
+
+### Logout
+
+Para realizar el logout, debes enviar una solicitud `POST` a la ruta `/api/logout/` con los siguientes detalles:
+
+**Headers**
+
+- `Authorization`: `Bearer <access_token>`
+
+ **Body**
+
+```json
+{
+  "refresh_token": "<refresh_token>"
+}
+
+Respuesta esperada
+Código de estado: 204 No Content
+ - **Descripción**: La solicitud de logout se procesó correctamente y no hay contenido adicional que devolver.
+
     
 ##Instalación de la API REST
 
 ### Requisitos
-- asgiref==3.8.1
-- dj-rest-auth==6.0.0
-- Django==5.1.1
-- django-bootstrap3==24.2
-- djangorestframework==3.15.2
-- djangorestframework-simplejwt==5.3.1
-- drf-yasg==1.21.7
-- inflection==0.5.1
-- packaging==24.1
-- PyJWT==2.9.0
-- pytz==2024.2
-- PyYAML==6.0.2
-- setuptools==74.1.2
-- sqlparse==0.5.1
-- tzdata==2024.1
-- uritemplate==4.1.1
+-asgiref==3.8.1
+-dj-rest-auth==6.0.0
+-Django==5.1.1
+-django-bootstrap3==24.2
+-djangorestframework==3.15.2
+-djangorestframework-simplejwt==5.3.1
+-drf-yasg==1.21.7
+-inflection==0.5.1
+-packaging==24.1
+-PyJWT==2.9.0
+-pytz==2024.2
+-PyYAML==6.0.2
+-setuptools==74.1.2
+-sqlparse==0.5.1
+-tzdata==2024.1
+-uritemplate==4.1.1
 
 ### Instalación:
 1. Clonar el repositorio de GitHub con el comando:
@@ -117,3 +139,5 @@ Las tareas son del usuario que se ha logueado. Si no está logueado, no podrá r
     python manage.py runserver
     ```
 
+## Link del repositorio GitHub
+- [Link del repositorio GitHub](https://github.com/jrxjb/API)
