@@ -221,7 +221,7 @@ Código de estado: 204 No Content
 - Código de estado: 204 No Content
 
 
-##Instalación de la API REST
+## Instalación de la API REST
 
 ### Requisitos
 - asgiref==3.8.1
@@ -289,3 +289,6 @@ Código de estado: 204 No Content
 
 ## Link del repositorio GitHub
 - [Link del repositorio GitHub](https://github.com/jrxjb/API)
+
+## Documentación
+La documentación de la API está disponible en /swagger/. Puedes acceder a ella una vez que el servidor esté en funcionamiento.
