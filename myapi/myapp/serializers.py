@@ -14,27 +14,28 @@ class TaskSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class LoginSerializer(serializers.Serializer):
+class LoginRequestSerializer(serializers.Serializer):
     username = serializers.CharField()
     password = serializers.CharField()
 
     def validate(self, data):
         username = data.get('username')
         password = data.get('password')
-        user = authenticate(username=username, password=password)
+        user =authenticate(username=username, password=password)
         if user and user.is_active:
             return user
         raise serializers.ValidationError("Invalid Credentials")
     
+class LoginResponseSerializer(serializers.Serializer):
+    refresh = serializers.CharField()
+    access = serializers.CharField()
 
 
-class RegisterSerializer(serializers.ModelSerializer):
+class RegisterRequestSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
-
     class Meta:
         model = User
         fields = ('username', 'email', 'password')
-
     def create(self, validated_data):
         user = User.objects.create_user(
             username=validated_data['username'],
@@ -42,3 +43,9 @@ class RegisterSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         return user
+    
+class RegisterResponseSerializer():
+    class Meta:
+        model=User
+        fields =('id','username','email')
+
